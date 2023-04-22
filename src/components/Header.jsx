@@ -1,12 +1,5 @@
 import React from 'react';
-import logo from '../img/justlogo.webp';
-
-function navMobile (){
-   return < >
-
-</>
-
-}
+import logoHeader from '../img/justLogo.webp';
 
 
 export default function Header() {
@@ -14,7 +7,7 @@ export default function Header() {
     <>
     <header  className="header">
 <a href="#" name="Logo Huignanco" alt="logo huinganco" id="logoDesktop">
-    <img className="banner-logo" src={logo} alt="logo huinganco"/>
+    <img className="banner-logo" src={logoHeader} alt="logo huinganco"/>
   
     <span>Huingan-có</span>
 </a>
@@ -38,7 +31,7 @@ export default function Header() {
 </nav>
 
 
-<a href="#" className="logo-mobile"><img width="220px" src={logo} alt="logo huinganco"/></a>
+<a href="#" className="logo-mobile"><img width="220px" src={logoHeader} alt="logo huinganco"/></a>
 
 <div className="dropdown">
     <input type="checkbox" id="dropdown-mobile"/>
