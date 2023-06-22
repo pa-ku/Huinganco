@@ -12,20 +12,7 @@ export default function Header() {
         </a>
 
         <nav className="nav">
-          <div className="ctn-bt-theme">
-            <label htmlFor="theme" className="label-theme" title="theme">
-              <input
-                type="checkbox"
-                value="theme"
-                className="theme"
-                id="switchTheme"
-              />
-              <ion-icon name="sunny-outline" className="sun-icon">
-                🎇
-              </ion-icon>
-              <span className="moon-icon">🎇</span>
-            </label>
-          </div>
+          
           <a href="#" className="btn-nav">
             Que hacer
           </a>
