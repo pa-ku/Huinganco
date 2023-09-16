@@ -427,38 +427,7 @@ body:has(input[value="theme"]:checked) .sun-icon {
   color: var(--nav-btn-hover);
 }
 
-.btn-banner {
-  padding: 0.1em 0.8em;
-  color: floralwhite;
-  margin-top: 10px;
-  background-color: var(--octubre-btn-backG);
-  font-weight: 500;
-  display: inline-block;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: 0.2s;
-  outline: 2px solid floralwhite;
-}
 
-.btn-banner:hover {
-  color: #222;
-  background-color: floralwhite;
-  outline-offset: 2px;
-}
-
-#btn-reserva {
-  color: var(--joyas-title-btn-hover);
-  outline-color: var(--joyas-title-btn-hover);
-  margin-left: 10px;
-  font-weight: 500;
-}
-
-#btn-reserva:hover {
-  background-color: var(--joyas-title-btn-hover);
-  color: #333;
-  outline-offset: -2px;
-  outline: 4px solid #333;
-}
 
 /* end Banner */
 
@@ -540,9 +509,9 @@ body:has(input[value="theme"]:checked) .sun-icon {
 }
 
 .dificultad , .altura{
-  font-weight: 500;
+  font-weight: 600;
   border-radius: 5px;
-  padding: 2px 6px 2px 6px;
+  padding: 5px 8px;
   display: inline-block;
   color: black;
 }

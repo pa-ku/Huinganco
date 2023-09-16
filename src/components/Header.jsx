@@ -1,5 +1,7 @@
 import React from "react";
 import logoHeader from "../img/justLogo.webp";
+import styled from "styled-components";
+
 
 export default function Header() {
   return (

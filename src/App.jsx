@@ -5,6 +5,14 @@ import Cards from "./components/Cards";
 import Form from "./components/Form";
 import TrailOctubre from "./components/TrailOctubre";
 import "./style.css";
+import styled from "styled-components";
+import LinkButton from "./components/ui/LinkButton";
+
+const Subtitle  = styled.p`
+width: 80ch;
+`
+
+
 
 function App() {
   return (
@@ -15,18 +23,12 @@ function App() {
         <div className="dark-filter-banner"></div>
         <div className="content-banner">
           <h1 className="banner-titulo"> El jardin del Neuquen</h1>
-          <p>
+          <Subtitle>
             Huingán-có es una localidad Argentina del departamento Minas, en la
             provincia del Neuquén. Ubicado a los pies de la Cordillera del
             Viento
-          </p>
-          <a
-            href="#"
-            className="btn-banner"
-            aria-label="Boton para mas informacion"
-          >
-            Más Info
-          </a>
+          </Subtitle>
+          <LinkButton text={"Más Info"} href={"#"} ariaLabel={"Boton para mas informacion"} />
         </div>
       </div>
 

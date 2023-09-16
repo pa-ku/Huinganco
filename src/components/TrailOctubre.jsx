@@ -2,6 +2,16 @@ import React from "react";
 import imgCarousell from "../img/carousel2.webp";
 import imgCarousel2 from "../img/carousel3.webp";
 import imgCarousel3 from "../img/carousel4.webp";
+import LinkButton from "./ui/LinkButton";
+import styled from "styled-components";
+
+
+const ButtonContainer = styled.div`
+display: flex;
+align-items: start;
+justify-content: start;
+gap: 1em;
+`
 
 export default function TrailOctubre() {
   return (
@@ -79,18 +89,11 @@ export default function TrailOctubre() {
               a casi 3.000 metros de altura. Esto la convierte en el Trail en el
               que más alto se corre de la Patagonia.
             </p>
-
-            <a href="#" className="btn-banner">
-              Conocé más
-            </a>
-            <a
-              href="/reserva/reservaIndex.html"
-              className="btn-banner"
-              id="btn-reserva"
-              target="_blank"
-            >
-              Reserva tu lugar!
-            </a>
+<ButtonContainer>
+            <LinkButton text={"Conoce más"} />
+              <LinkButton $altButton={true} text={"Reserva tu lugar"} href={"#"} />
+</ButtonContainer>
+    
           </div>
         </div>
       </article>
