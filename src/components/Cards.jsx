@@ -2,26 +2,81 @@ import React from "react";
 import imgMirador from "../img/sanPedro.webp";
 import imgPino from "../img/pino.webp";
 import imgCorona from "../img/corona.webp";
+import styled from "styled-components";
 
-function Card({ img, difucultad, altura, titulo, info, src }) {
+const CardWrapper = styled.div`
+  flex-basis: 200px;
+  flex-grow: 0.2;
+  transition: 0.2s ease-in-out;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  justify-content: space-between;
+`;
+
+const IconsContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: var(--font-normal);
+  margin-top: 1rem;
+`;
+
+const Icon = styled.p`
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 5px 8px;
+  display: inline-block;
+  color: black;
+  background-color: #d6d6d6;
+  background-color: ${(props) => props.$dificultadColor};
+
+`;
+
+const InfoContainer = styled.div`
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: start;
+  flex-direction: column;
+  gap: 0.5em;
+  min-height: 120px;
+`;
+
+const Img = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3px 3px 0px 0px;
+  margin-bottom: 5px;
+`;
+
+function Card({ img, difcultad, altura, titulo, info, src, $dificultadColor }) {
   return (
     <>
-      <div className="bloque-joyas">
-        <img src={img} alt="Imagen cerro corona" className="bloque-img-joyas" />
+      <CardWrapper>
+        <Img src={img} alt="Imagen cerro corona" className="bloque-img-joyas" />
 
-        <h2 className="titulo-bloque-joyas">
-          <a href={src} className="anchor-titulo-bloque-joyas" target="_BLANK">
-            {titulo}
-          </a>
-        </h2>
-        <p className="texto-bloque-joyas">{info}</p>
-        <div className="ctn-altura-dificultad">
-          <p className="dificultad facil" id={difucultad}>
-            Dificultad: {difucultad} {/* Alta Media Baja */}
-          </p>
-          <p className="altura">Altura: {altura}.msnm</p>
-        </div>
-      </div>
+        <InfoContainer>
+          <h2 className="titulo-bloque-joyas">
+            <a
+              href={src}
+              className="anchor-titulo-bloque-joyas"
+              target="_BLANK"
+            >
+              {titulo}
+            </a>
+          </h2>
+          <p className="texto-bloque-joyas">{info}</p>
+        </InfoContainer>
+
+        <IconsContainer className="ctn-altura-dificultad">
+          <Icon $dificultadColor={$dificultadColor}>Dificultad: {difcultad}</Icon>
+          <Icon className="altura">Altura: {altura}.msnm</Icon>
+        </IconsContainer>
+      </CardWrapper>
     </>
   );
 }
@@ -37,8 +92,9 @@ export default function Cards() {
 
         <div className="ctn-joyas">
           <Card
+            $dificultadColor={"#b6ff85"}
             img={imgMirador}
-            difucultad={"Baja"}
+            difcultad={"Facil"}
             altura={"1600"}
             titulo={"Mirador San Pedro"}
             src={""}
@@ -46,9 +102,11 @@ export default function Cards() {
               "Arrancamos en el pueblo de huinganco con una subida de 30-40 minutos, que nos deleita con una de las mejores vistas del Lugar, desde la cima se puede avistar, el cerro corona, andacollo, la cordillera andina y la cordillera del viento"
             }
           />
+
           <Card
             img={imgPino}
-            difucultad={"Media"}
+            $dificultadColor={"#ffba65"}
+            difcultad={"Media"}
             altura={"1300"}
             titulo={"Sendero Pino Huacho"}
             src={""}
@@ -59,6 +117,7 @@ export default function Cards() {
 
           <Card
             img={imgCorona}
+            $dificultadColor={"#fa7373"}
             difucultad={"Alta"}
             altura={"2938"}
             titulo={"Cerro Corona"}
